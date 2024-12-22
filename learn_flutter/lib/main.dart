@@ -37,8 +37,26 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: 
-      
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Container(
+          width: 200,
+          height: 400,
+          decoration: const BoxDecoration(
+            color: Color.fromARGB(255, 171, 120, 116),
+            borderRadius: BorderRadius.all(Radius.circular(20)),
+          ),
+          child: const Text(
+            'Hello World',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.white,
+              wordSpacing: 12,
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
