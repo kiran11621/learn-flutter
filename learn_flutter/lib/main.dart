@@ -48,6 +48,7 @@ class _ButtonsState extends State<Buttons> {
                 ElevatedButton(
                   onPressed: () {
                     print('Printing On Press');
+                    showAlertDialog(context);
                   },
                   child: Text(
                     'Button',
@@ -97,6 +98,29 @@ class _ButtonsState extends State<Buttons> {
           ],
         ),
       ),
+    );
+  }
+
+  showAlertDialog(BuildContext context) {
+    AlertDialog alert = AlertDialog(
+      title: Text('This is a Dialog Box'),
+      actions: [
+        ElevatedButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          child: Text(
+            'ok',
+          ),
+        ),
+      ],
+    );
+
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
     );
   }
 }
