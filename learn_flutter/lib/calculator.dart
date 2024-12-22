@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class Calculator extends StatefulWidget {
   const Calculator({super.key});
@@ -35,6 +36,10 @@ class _CalculatorState extends State<Calculator> {
             children: [
               TextFormField(
                 controller: _num1Controller,
+                keyboardType: TextInputType.number,
+                inputFormatters: [
+                  FilteringTextInputFormatter.allow(RegExp(r'^\d*\.?\d*$'))
+                ],
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: "Enter your Number 1",
@@ -45,6 +50,7 @@ class _CalculatorState extends State<Calculator> {
               ),
               TextFormField(
                 controller: _num2Controller,
+                keyboardType: TextInputType.number,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: "Enter your Number 2",
