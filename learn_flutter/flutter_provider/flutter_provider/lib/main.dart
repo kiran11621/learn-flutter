@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_provider/quote.dart';
 import 'package:flutter_provider/quote_provider.dart';
+import 'package:flutter_provider/weather_app/weather_app.dart';
+import 'package:flutter_provider/weather_app/weather_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -16,6 +18,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider<QuotesProvider>(
           create: (_) => QuotesProvider(),
+        ),
+        ChangeNotifierProvider<WeatherProvider>(
+          create: (_) => WeatherProvider(),
         )
       ],
       child: MaterialApp(
@@ -24,7 +29,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const QuoteScreen(),
+        home: const WeatherAppScreen(),
       ),
     );
   }
