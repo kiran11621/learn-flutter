@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/buttons.dart';
 import 'package:learn_flutter/calculator.dart';
 import 'package:learn_flutter/widgets.dart';
 
 void main() {
   runApp(const MyApp());
+}
+
+class Routes {
+  static const String initialRoute = '/';
+  static const String calculatorRoute = '/Calculator';
 }
 
 class MyApp extends StatelessWidget {
@@ -17,7 +23,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Calculator(),
+      // home: const Calculator(),
+      routes: {
+        Routes.initialRoute: (context) => const Buttons(),
+        Routes.calculatorRoute: (context) => const Calculator(),
+      },
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:learn_flutter/buttons.dart';
 
 class Calculator extends StatefulWidget {
   const Calculator({super.key});
@@ -82,13 +83,27 @@ class _CalculatorState extends State<Calculator> {
                   IconButton(
                     color: Colors.purpleAccent,
                     hoverColor: Colors.grey,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Buttons(),
+                        ),
+                      );
+                    },
                     icon: const Icon(Icons.close),
                   ),
                   IconButton(
                     color: Colors.purpleAccent,
                     hoverColor: Colors.grey,
-                    onPressed: () {},
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text('This is my snackbar'),
+                          duration: Duration(seconds: 10),
+                        ),
+                      );
+                    },
                     icon: const Icon(Icons.star),
                   ),
                 ],

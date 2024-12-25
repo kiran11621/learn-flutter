@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/main.dart';
 
 class Buttons extends StatefulWidget {
   const Buttons({super.key});
@@ -44,6 +45,7 @@ class _ButtonsState extends State<Buttons> {
                 TextButton(
                   onPressed: () {
                     print('Printing On Press');
+                    Navigator.pushNamed(context, Routes.calculatorRoute);
                   },
                   child: const Text(
                     'Button',
